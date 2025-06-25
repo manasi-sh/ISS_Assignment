@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Registration</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body>
+  <div class="container">
+  <div class="form-container">
+    <h2>Student Registration Form</h2>
+
+    <form id="registrationForm">
+      <div class="form-group">
+        <label for="fullname">Full Name*</label>
+        <input type="text" class="form-control" id="fullname" required>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email*</label>
+        <input type="email" class="form-control" id="email" required>
+      </div>
+
+      <div class="form-group">
+        <label for="dob">Date of Birth</label>
+        <input type="date" class="form-control" id="dob">
+      </div>
+
+      <div class="form-group">
+        <label>Gender</label><br>
+        <label class="radio-inline"><input type="radio" name="gender" value="Male"> Male</label>
+        <label class="radio-inline"><input type="radio" name="gender" value="Female"> Female</label>
+      </div>
+
+      <div class="form-group">
+        <label>Interests</label><br>
+        <label class="checkbox-inline"><input type="checkbox" name="interest" value="Coding"> Coding</label>
+        <label class="checkbox-inline"><input type="checkbox" name="interest" value="Music"> Music</label>
+        <label class="checkbox-inline"><input type="checkbox" name="interest" value="Sports"> Sports</label>
+      </div>
+
+      <button type="submit" class="btn btn-primary btn-custom">Register</button>
+    </form>
+
+    <div class="message" id="successMsg"></div>
+  </div>
+</div>
+
+<script>
+  const form = document.getElementById('registrationForm');
+  const successMsg = document.getElementById('successMsg');
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault(); // Stop form from default submission
+
+    const name = document.getElementById('fullname').value.trim();
+    const email = document.getElementById('email').value.trim();
+
+    if (!name || !email) {
+      alert("Please fill in all required fields.");
+      return;
+    }
+
+    successMsg.textContent = `🎉 Thank you, ${name}. Your registration is successful!`;
+    form.reset(); // Clear form after success
+  });
+</script>
+
+</body>
+</html>
