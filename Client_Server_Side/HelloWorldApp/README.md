@@ -6,11 +6,12 @@ This module handles backend processing using Java Servlets and JSP. It controls 
 - Language: Java 8 (JDK 1.8)
 - Server: Apache Tomcat 9
 - IDE: Eclipse IDE (Enterprise Edition)
-- Servlet & JSP API: Jakarta EE / Java EE
+- Build Tool: Maven 
+- Project Structure: Maven (with `src/main/java` and `src/main/webapp`)
 
 ## How to Run
-1. Import the `HelloWorldApp` folder into Eclipse (`File → Import → Existing Projects into Workspace`).
-2. Add Apache Tomcat 9 to the Eclipse Servers tab.
+1. Import the `HelloWorldApp` folder into Eclipse (`File → Import → Existing Maven Projects`).
+2. Add Apache Tomcat 9 in the `Servers` tab and configure it with the project.
 3. Right-click the project → `Run As → Run on Server`.
 
 ## Access Flow
@@ -19,4 +20,4 @@ This module handles backend processing using Java Servlets and JSP. It controls 
 - To open the login/register app:  
   Visit `http://localhost:8080/HelloWorldApp/register`
 
-> Ensure the servlet classes are in the correct package (`com.manasi.web`) and servlet mappings are properly configured via annotations or `web.xml`.
+> Make sure servlet classes are in `src/main/java/com/manasi/web` and JSP files in `src/main/webapp/`.
