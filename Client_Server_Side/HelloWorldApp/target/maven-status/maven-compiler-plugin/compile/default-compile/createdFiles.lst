@@ -1,0 +1,4 @@
+com\manasi\web\LogoutServlet.class
+com\manasi\web\LoginServlet.class
+com\manasi\web\RegisterServlet.class
+com\manasi\web\HelloServlet.class
